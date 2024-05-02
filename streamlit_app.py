@@ -16,8 +16,9 @@ st.title("Build your own AI Medical Knowledge Base")
 st.header("Add Text from")
 text = st.text_area("Enter text:")
 title = st.text_input("Enter title:")
-if st.button("Add Text Chunks"):
-    response = call_api("add_text_chunks", {"text": text, "title": title})
+link = st.text_input("Enter link to article:")
+if st.button("Add Text to article"):
+    response = call_api("add_pharma", {"text": text, "title": title, "link": link})
     st.write(response)
 
 # Interaction with scoring endpoint
@@ -30,68 +31,6 @@ query = st.text_area("Enter question for Avocado Health:")
 use_guardrails = st.checkbox("Use Guardrails")
 endpoint = "guardrails" if use_guardrails else "fertilitae"
 
-
-
-
-
-# if st.button("Ask a question"):
-#     response = call_api(endpoint, {"Query": query})
-#     print('resonse', response)
-
-#     response_dict = json.loads(response)
-
-#     print("response dict", response_dict)
-
-
-
-
-#     result = response_dict["result"]
-#     references = response_dict["references"]
-
-    
-
-#     # Present the result
-#     st.markdown(f"**Result:** {result}")
-
-#     # Present the references
-#     st.markdown("**References:**")
-#     for ref in references:
-#         title = ref.get('title', '')
-#         link = ref.get('link', '')
-#         if link:
-#             st.markdown(f"- [{title}]({link})")
-#         else:
-#             st.markdown(f"- {title}")
-
-
-
-#     # st.write(response)
-
-
-# if st.button("Ask a question"):
-#     response = call_api(endpoint, {"Query": query})
-
-#     response_dict = json.loads(response)
-
-#     result = response_dict.get("result")
-#     references = response_dict("references")
-
-#     # Present the result
-#     st.markdown(f"**Result:** {result}")
-
-#     # Check if there are any references
-#     if references:
-#         # Present the references
-#         st.markdown("**References:**")
-#         for ref in references:
-#             title = ref.get('title', '')
-#             link = ref.get('link', '')
-#             if link:
-#                 st.markdown(f"- [{title}]({link})")
-#             else:
-#                 st.markdown(f"- {title}")
-#     else:
-#         st.markdown("No references found.")
 
 if st.button("Ask a question"):
     response = call_api(endpoint, {"Query": query})
