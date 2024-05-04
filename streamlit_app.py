@@ -2,7 +2,9 @@ import streamlit as st
 import requests
 import json
 
-API_BASE_URL = "https://avocado-backend-dtfu.onrender.com"
+# API_BASE_URL = "https://avocado-backend-dtfu.onrender.com"
+API_BASE_URL = "http://127.0.0.1:8000"
+
 
 def call_api(endpoint, payload):
     """ Helper function to call API and return response """
@@ -43,6 +45,8 @@ if st.sidebar.button("Talk to your Knowledge Base"):
     st.session_state['navigation'] = 'test'
 if st.sidebar.button("Build your Knowledge Base"):
     st.session_state['navigation'] = 'build'
+if st.sidebar.button("Demo"):  # New button for Zocalo Demo
+    st.session_state['navigation'] = 'demo'
 
 # Sidebar about the app
 st.sidebar.title("About This App")
@@ -84,6 +88,23 @@ elif st.session_state['navigation'] == 'learn_more':
         """
         
     )
+
+elif st.session_state['navigation'] == 'demo':  # New section for Zocalo Demo
+    st.header("Enter your symptoms")
+    symptoms = st.text_input("Tell us how you have felt: enter your symptoms")
+
+    if symptoms:
+        st.header("Follow-up question")
+        follow_up = st.text_input("How long have you been feeling this way and what medicine have you taken so far?")
+        
+        if st.button("Submit"):
+            response = call_api("symptom_check", {"symptoms": symptoms, "feeling_and_medicine": follow_up})
+            st.write(response)
+
+        print("followup", follow_up)
+    print("symptoms", symptoms)
+
+
 
 else:  # Default section "Test our Health Content AI"
     st.header("Ask a question")
