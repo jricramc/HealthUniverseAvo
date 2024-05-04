@@ -2,8 +2,8 @@ import streamlit as st
 import requests
 import json
 
-# API_BASE_URL = "https://avocado-backend-dtfu.onrender.com"
-API_BASE_URL = "http://127.0.0.1:8000"
+API_BASE_URL = "https://avocado-backend-dtfu.onrender.com"
+# API_BASE_URL = "http://127.0.0.1:8000"
 
 
 def call_api(endpoint, payload):
