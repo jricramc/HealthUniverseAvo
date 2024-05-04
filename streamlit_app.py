@@ -66,16 +66,23 @@ elif st.session_state['navigation'] == 'learn_more':
     st.header("Welcome to Avocado Health AI")
     st.markdown(
         """
-        Detailed information about how Avocado Health AI processes and understands medical content, including:
-        - Data privacy
-        - AI model training
-        - Real-world applications
+        Avocado is a low hallucination AI pipeline designed to enhance health applications by incorporating a safety layer atop existing AI models. This integration significantly reduces hallucinations, facilitating the safe and reliable generation of health content. Health organizations can utilize their compiled knowledge bases—including articles, reports, and other resources—to create AI-driven chatbots that deliver accurate and personalized health information.
+
+        Whether you are a healthcare provider, a pharma company, or a wellness organization, Avocado Health AI can help you deliver personalized and engaging health content to your users. Try it out and see the power of AI in healthcare!
         """
        """
         Use Cases:
-        - Patient education
-        - Healthcare professional support
+        - Patient Education/Guidance: Imagine a scenario where a patient needs to understand their new diabetes medication regimen. Avocado can converse with the patient, explaining the timing, dosage, and side effects, thus reducing the workload on healthcare professionals.
+        - Drug Information: Pharma companies can use Avocado to inform both consumers and clinicians about drug interactions, benefits, and clinical study findings.
+        - Personalized Health Risk Assessments: Avocado can be utilized by healthcare providers or wellness companies to offer personalized health risk assessments. Users can input their medical history, lifestyle choices, family health history, and other relevant information. The AI then analyzes this data against a broad knowledge base to identify potential health risks and provide personalized preventive health advice.
         """
+        """
+        Limitations:
+        - Avocado is not a replacement for professional medical advice. Always consult a healthcare professional for medical advice and treatment.
+        - Avocado is not a diagnostic tool. It is designed to provide general health information and guidance.
+        - Avocado is not a substitute for human interaction
+        """
+        
     )
 
 else:  # Default section "Test our Health Content AI"
