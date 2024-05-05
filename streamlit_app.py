@@ -28,6 +28,12 @@ def set_custom_styles():
 
 set_custom_styles()
 
+st.markdown("""
+<div style="background-color: #f4f4f5; padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+    <b>Disclaimer:</b> This application is a demo and for educational purposes only. It is not intended to replace professional medical advice or treatment.
+</div>
+""", unsafe_allow_html=True)
+
 # Initialize the session state for navigation if it doesn't exist
 if 'navigation' not in st.session_state:
     st.session_state['navigation'] = 'learn_more'  # Set default to "learn_more" section
