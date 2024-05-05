@@ -29,7 +29,7 @@ def set_custom_styles():
 set_custom_styles()
 
 st.markdown("""
-<div style="background-color: #f4f4f5; padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+<div style="background-color: black; padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
     <b>Disclaimer:</b> This application is a demo and for educational purposes only. It is not intended to replace professional medical advice or treatment.
 </div>
 """, unsafe_allow_html=True)
@@ -51,7 +51,7 @@ if st.sidebar.button("Talk to your Knowledge Base"):
     st.session_state['navigation'] = 'test'
 if st.sidebar.button("Build your Knowledge Base"):
     st.session_state['navigation'] = 'build'
-if st.sidebar.button("Demo"):  # New button for Zocalo Demo
+if st.sidebar.button("Pre-visit AI"):  # New button for Zocalo Demo
     st.session_state['navigation'] = 'demo'
 
 # Sidebar about the app
