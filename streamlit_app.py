@@ -73,7 +73,7 @@ if st.session_state['navigation'] == 'build':
         st.write(response)
 
 elif st.session_state['navigation'] == 'learn_more':
-    st.header("Welcome to Avocado Health AI")
+    st.header("Low Hallucination LLM for Health Content")
     st.markdown(
         """
         Avocado is a low hallucination AI pipeline designed to enhance health applications by incorporating a safety layer atop existing AI models. This integration significantly reduces hallucinations, facilitating the safe and reliable generation of health content. Health organizations can utilize their compiled knowledge bases—including articles, reports, and other resources—to create AI-driven chatbots that deliver accurate and personalized health information.
