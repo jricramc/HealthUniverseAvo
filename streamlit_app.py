@@ -51,8 +51,8 @@ if st.sidebar.button("Talk to your Knowledge Base"):
     st.session_state['navigation'] = 'test'
 if st.sidebar.button("Build your Knowledge Base"):
     st.session_state['navigation'] = 'build'
-if st.sidebar.button("Pre-visit AI"):  # New button for Zocalo Demo
-    st.session_state['navigation'] = 'demo'
+# if st.sidebar.button("Pre-visit AI"):  # New button for Zocalo Demo
+#     st.session_state['navigation'] = 'demo'
 
 # Sidebar about the app
 st.sidebar.title("About This App")
@@ -64,7 +64,7 @@ st.sidebar.info(
 
 # Display sections based on navigation state
 if st.session_state['navigation'] == 'build':
-    st.header("Add Content")
+    st.header("Add content")
     title = st.text_input("Enter title:")
     link = st.text_input("Source URL")
     text = st.text_area("Enter text:")
@@ -82,9 +82,9 @@ elif st.session_state['navigation'] == 'learn_more':
         """
        """
         Use Cases:
-        - Patient Education/Guidance: Imagine a scenario where a patient needs to understand their new diabetes medication regimen. Avocado can converse with the patient, explaining the timing, dosage, and side effects, thus reducing the workload on healthcare professionals.
         - Drug Information: Pharma companies can use Avocado to inform both consumers and clinicians about drug interactions, benefits, and clinical study findings.
-        - Personalized Health Risk Assessments: Avocado can be utilized by healthcare providers or wellness companies to offer personalized health risk assessments. Users can input their medical history, lifestyle choices, family health history, and other relevant information. The AI then analyzes this data against a broad knowledge base to identify potential health risks and provide personalized preventive health advice.
+        - Surgical Procedures: Avocado can provide pre- and post-surgery guidance to patients, helping them understand the procedure, recovery process, and potential complications.
+        - Patient Education/Guidance: Imagine a scenario where a patient needs to understand their new diabetes medication regimen. Avocado can converse with the patient, explaining the timing, dosage, and side effects, thus reducing the workload on healthcare professionals.
         """
         """
         Limitations:
@@ -114,7 +114,7 @@ elif st.session_state['navigation'] == 'demo':  # New section for Zocalo Demo
 
 else:  # Default section "Test our Health Content AI"
     st.header("Ask a question (Pfizer drug information)")
-    query = st.text_area("Enter question for Avocado Health about Pfizer product information:")
+    query = st.text_area("Enter question for Avocado Health about Pfizer drug information:")
     use_guardrails = st.checkbox("Use Guardrails")
     endpoint = "guardrails" if use_guardrails else "clue_API"
 
