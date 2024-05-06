@@ -64,10 +64,10 @@ st.sidebar.info(
 
 # Display sections based on navigation state
 if st.session_state['navigation'] == 'build':
-    st.header("Add Text")
-    text = st.text_area("Enter text:")
+    st.header("Add Content")
     title = st.text_input("Enter title:")
-    link = st.text_input("Enter link to source:")
+    link = st.text_input("Source URL")
+    text = st.text_area("Enter text:")
     if st.button("Add Text to Knowledge Base"):
         response = call_api("add_pharma", {"text": text, "title": title, "link": link})
         st.write(response)
@@ -113,7 +113,7 @@ elif st.session_state['navigation'] == 'demo':  # New section for Zocalo Demo
 
 
 else:  # Default section "Test our Health Content AI"
-    st.header("Ask a question (Pfizer Product Information)")
+    st.header("Ask a question (Pfizer drug information)")
     query = st.text_area("Enter question for Avocado Health about Pfizer product information:")
     use_guardrails = st.checkbox("Use Guardrails")
     endpoint = "guardrails" if use_guardrails else "clue_API"
