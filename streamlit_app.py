@@ -116,7 +116,7 @@ else:  # Default section "Test our Health Content AI"
     st.header("Ask a question (Pfizer Product Information)")
     query = st.text_area("Enter question for Avocado Health about Pfizer product information:")
     use_guardrails = st.checkbox("Use Guardrails")
-    endpoint = "guardrails" if use_guardrails else "fertilitae"
+    endpoint = "guardrails" if use_guardrails else "clue_API"
 
     if st.button("Submit"):
         response = call_api(endpoint, {"Query": query})
